@@ -43,5 +43,3 @@ Inside Components->
 Open your browser and go to: http://localhost:3000
 
 You should see the messages from Home, About, and Contact components displayed.
-
-
