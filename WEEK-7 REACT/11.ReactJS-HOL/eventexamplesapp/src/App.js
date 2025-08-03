@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import CurrencyConvertor from './CurrencyConvertor';
+import CurrencyConverter from './CurrencyConverter';
 
 function App() {
   const [counter, setCounter] = useState(0);
@@ -36,7 +36,7 @@ function App() {
       <br /><br />
       <button onClick={handlePress}>Click on me</button>
       <br /><br />
-      <CurrencyConvertor />
+      <CurrencyConverter />
     </div>
   );
 }
