@@ -1,55 +1,42 @@
 import React, { useState } from 'react';
-import CurrencyConverter from './CurrencyConverter';
+import './App.css';
+import CurrencyConvertor from './CurrencyConvertor';
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [message, setMessage] = useState(''); // <-- New state for displaying messages
+  const [counter, setCounter] = useState(0);
 
   const increment = () => {
-    setCount(prev => prev + 1);
+    setCounter(prev => prev + 1);
+    sayHello(); 
+  };
+
+  const decrement = () => {
+    setCounter(prev => prev - 1);
   };
 
   const sayHello = () => {
-    setMessage("Hello! This is a static message.");
+    alert("Hello! Member1");
   };
 
-  const handleIncrement = () => {
-    increment();
-    sayHello();
+  const sayWelcome = (msg) => {
+    alert(msg);
   };
 
-  const handleDecrement = () => {
-    setCount(prev => prev - 1);
-  };
-
-  const sayMessage = (msg) => {
-    setMessage(msg); // <-- Display "Welcome"
-  };
-
-  const handleSyntheticEvent = (e) => {
-    e.preventDefault();
-    setMessage("I was clicked"); // <-- Display synthetic event message
+  const handlePress = () => {
+    alert("I was clicked");
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Event Examples App</h1>
-
-      <h2>Counter: {count}</h2>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleDecrement}>Decrement</button>
-
+    <div className="App">
+      <h2>{counter}</h2>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
       <br /><br />
-      <button onClick={() => sayMessage("Welcome")}>Say Welcome</button>
-
+      <button onClick={() => sayWelcome("Hello! Member1")}>Say welcome</button>
       <br /><br />
-      <button onClick={handleSyntheticEvent}>Synthetic OnPress</button>
-
+      <button onClick={handlePress}>Click on me</button>
       <br /><br />
-      {message && <p><strong>Message:</strong> {message}</p>}  {/* Show message here */}
-
-      <br /><br />
-      <CurrencyConverter />
+      <CurrencyConvertor />
     </div>
   );
 }
